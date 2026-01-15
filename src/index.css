@@ -141,6 +141,10 @@
     @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
   }
 
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
