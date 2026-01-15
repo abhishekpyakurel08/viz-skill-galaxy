@@ -12,20 +12,20 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'Project One',
+    title: 'ATS NEPAL WEBSITE',
     description: 'Short description of your first project. Replace this with details about your actual project.',
     image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop',
     technologies: ['React', 'TypeScript', 'Node.js'],
-    liveUrl: 'https://yourproject1.com',
-    githubUrl: 'https://github.com/yourusername/project1',
+    liveUrl: 'https://github.com/thomasabhi/ATS-NEPAL',
+    githubUrl: 'https://github.com/thomasabhi',
   },
   {
-    title: 'Project Two',
+    title: 'E-Commerce Backend with TypeScript',
     description: 'Short description of your second project. Replace this with details about your actual project.',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
     technologies: ['Next.js', 'PostgreSQL', 'Tailwind CSS'],
-    liveUrl: 'https://yourproject2.com',
-    githubUrl: 'https://github.com/yourusername/project2',
+    liveUrl: 'git@github.com:thomasabhi/ecommerce_backend_with_typescript.git',
+    githubUrl: 'https://github.com/thomasabhi/ATS-NEPAL',
   },
 ];
 

@@ -37,7 +37,7 @@ const HeroSection = () => {
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-accent blur-xl opacity-50" />
             <div className="relative w-[150px] h-[150px] rounded-full border-4 border-foreground/20 overflow-hidden bg-muted">
               <img
-                src="/placeholder.svg"
+                src="https://scontent.fktm20-1.fna.fbcdn.net/v/t39.30808-6/485146139_122157480782438040_5079181007324896032_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGRT3RrRxclY8PTAuzgx4PUwHa9hTTiMKTAdr2FNOIwpM5X4c8Fe2QHGYXHAvf0dtS-AnLNDJr0yymAMHrR_aPM&_nc_ohc=0pZyJGBUp5cQ7kNvwFy2aPt&_nc_oc=AdneNXk8R7yFiD03nJTfVckHjzenuP3x8PCnNXsJg_TGISYVNv4HCCyb6AvrJEKZl3k&_nc_zt=23&_nc_ht=scontent.fktm20-1.fna&_nc_gid=HgR4ioh-wjUj7oi0rXjTrQ&oh=00_AfrxtqJEpezFOpl3-aujYBo3euq5smpNqJNhg5JI1K7BBg&oe=696E8737"
                 alt="Abhishek Pyakurel"
                 className="w-full h-full object-cover"
               />
@@ -68,7 +68,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight"
         >
-          <span className="text-foreground">Hello, I'm</span>
+          <span className="text-foreground">Hi, I'm</span>
           <br />
           <motion.span
             initial={{ opacity: 0 }}
