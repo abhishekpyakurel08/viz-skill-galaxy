@@ -32,7 +32,7 @@ const HeroSection = () => {
           className="mb-6"
         >
           <span className="inline-block text-xs md:text-sm font-display tracking-[0.4em] text-primary uppercase px-4 py-2 border border-primary/30 rounded-full">
-            Full Stack Developer
+            Full Stack Software Engineer
           </span>
         </motion.div>
 
@@ -50,7 +50,7 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 0.5 }}
             className="text-gradient-neon inline-block"
           >
-            Your Name
+            Abhishek Pyakurel
           </motion.span>
         </motion.h1>
 
@@ -60,9 +60,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-6 md:mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
         >
-          Building immersive digital experiences with modern web technologies.
-          <br className="hidden md:block" />
-          Passionate about <span className="text-primary">React</span>, <span className="text-secondary">Three.js</span>, and <span className="text-accent">creative coding</span>.
+          I build scalable <span className="text-primary">SaaS platforms</span> and immersive <span className="text-secondary">3D web experiences</span>.
         </motion.p>
 
         <motion.div
