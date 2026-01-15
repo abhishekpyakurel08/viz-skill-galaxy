@@ -3,7 +3,7 @@ import SkillsScene from './SkillsScene';
 
 const SkillsProjection = () => {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-background">
+    <section id="skills" className="relative min-h-screen w-full overflow-hidden bg-background">
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 grid-pattern pointer-events-none" />
       
