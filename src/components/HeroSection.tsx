@@ -25,10 +25,36 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
+        {/* Profile Photo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="mb-8"
+        >
+          <div className="relative inline-block">
+            {/* Glow effect behind image */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-accent blur-xl opacity-50" />
+            <div className="relative w-[150px] h-[150px] rounded-full border-4 border-foreground/20 overflow-hidden bg-muted">
+              <img
+                src="/placeholder.svg"
+                alt="Abhishek Pyakurel"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {/* Animated ring */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+              className="absolute -inset-2 rounded-full border border-dashed border-primary/40"
+            />
+          </div>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
           className="mb-6"
         >
           <span className="inline-block text-xs md:text-sm font-display tracking-[0.4em] text-primary uppercase px-4 py-2 border border-primary/30 rounded-full">
