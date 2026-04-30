@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Mail, Phone, MapPin, Github } from 'lucide-react';
 
 const HeroSection = () => {
   const scrollToProjects = () => {
@@ -10,10 +10,10 @@ const HeroSection = () => {
     <section id="hero" className="relative min-h-screen w-full overflow-hidden flex items-center justify-center">
       {/* Animated gradient background */}
       <div className="absolute inset-0 bg-background">
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 -left-1/4 w-1/2 h-1/2 bg-primary/20 rounded-full blur-[120px] animate-pulse" />
-          <div className="absolute bottom-0 -right-1/4 w-1/2 h-1/2 bg-secondary/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/3 h-1/3 bg-accent/15 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 -left-1/4 w-1/2 h-1/2 bg-primary/10 rounded-full blur-[120px] animate-pulse" />
+          <div className="absolute bottom-0 -right-1/4 w-1/2 h-1/2 bg-accent/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/3 h-1/3 bg-secondary/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }} />
         </div>
       </div>
 
@@ -34,10 +34,10 @@ const HeroSection = () => {
         >
           <div className="relative inline-block">
             {/* Glow effect behind image */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-accent blur-xl opacity-50" />
-            <div className="relative w-[150px] h-[150px] rounded-full border-4 border-foreground/20 overflow-hidden bg-muted">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-accent to-secondary blur-xl opacity-40" />
+            <div className="relative w-[200px] h-[200px] sm:w-[220px] sm:h-[220px] md:w-[250px] md:h-[250px] rounded-full border-4 border-border overflow-hidden bg-muted">
               <img
-                src="https://scontent.fktm20-1.fna.fbcdn.net/v/t39.30808-6/485146139_122157480782438040_5079181007324896032_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGRT3RrRxclY8PTAuzgx4PUwHa9hTTiMKTAdr2FNOIwpM5X4c8Fe2QHGYXHAvf0dtS-AnLNDJr0yymAMHrR_aPM&_nc_ohc=0pZyJGBUp5cQ7kNvwFy2aPt&_nc_oc=AdneNXk8R7yFiD03nJTfVckHjzenuP3x8PCnNXsJg_TGISYVNv4HCCyb6AvrJEKZl3k&_nc_zt=23&_nc_ht=scontent.fktm20-1.fna&_nc_gid=HgR4ioh-wjUj7oi0rXjTrQ&oh=00_AfrxtqJEpezFOpl3-aujYBo3euq5smpNqJNhg5JI1K7BBg&oe=696E8737"
+                src="/profile.png"
                 alt="Abhishek Pyakurel"
                 className="w-full h-full object-cover"
               />
@@ -46,7 +46,7 @@ const HeroSection = () => {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-              className="absolute -inset-2 rounded-full border border-dashed border-primary/40"
+              className="absolute -inset-2 rounded-full border border-dashed border-border"
             />
           </div>
         </motion.div>
@@ -57,8 +57,8 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
           className="mb-6"
         >
-          <span className="inline-block text-xs md:text-sm font-display tracking-[0.4em] text-primary uppercase px-4 py-2 border border-primary/30 rounded-full">
-            Full Stack Software Engineer
+          <span className="inline-block text-[10px] sm:text-xs md:text-sm font-display tracking-[0.2em] sm:tracking-[0.4em] text-primary uppercase px-3 sm:px-4 py-2 border border-border rounded-full bg-secondary/50">
+            MERN Stack Developer | Fellowship Applicant
           </span>
         </motion.div>
 
@@ -86,8 +86,36 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-6 md:mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
         >
-          I build scalable <span className="text-primary">SaaS platforms</span> and immersive <span className="text-secondary">3D web experiences</span>.
+          Computer Science undergraduate eager to bridge the gap between theory and real-world software development.
         </motion.p>
+
+        {/* Contact Info */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="mt-6 flex flex-col sm:flex-row flex-wrap justify-center gap-2 sm:gap-4 text-xs sm:text-sm text-muted-foreground px-4"
+        >
+          <a href="mailto:abhishekpyakurel01@gmail.com" className="flex items-center gap-2 hover:text-primary transition-colors min-h-[44px]">
+            <Mail className="w-4 h-4 flex-shrink-0" />
+            <span className="break-all">abhishekpyakurel01@gmail.com</span>
+          </a>
+          <span className="hidden sm:inline text-border">|</span>
+          <a href="tel:+9779743223799" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <Phone className="w-4 h-4" />
+            +977-9743223799
+          </a>
+          <span className="hidden sm:inline text-border">|</span>
+          <span className="flex items-center gap-2">
+            <MapPin className="w-4 h-4" />
+            Kathmandu, Nepal
+          </span>
+          <span className="hidden sm:inline text-border">|</span>
+          <a href="https://github.com/abhishekpyakurel08" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <Github className="w-4 h-4" />
+            GitHub
+          </a>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -99,18 +127,16 @@ const HeroSection = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={scrollToProjects}
-            className="group relative px-8 py-4 font-display font-semibold text-sm uppercase tracking-wider overflow-hidden rounded-lg"
+            className="group relative px-8 py-4 font-display font-semibold text-sm uppercase tracking-wider overflow-hidden rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent opacity-90 group-hover:opacity-100 transition-opacity" />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
-            <span className="relative z-10 text-primary-foreground">View My Work</span>
+            View My Work
           </motion.button>
 
           <motion.a
             href="#skills"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 font-display font-semibold text-sm uppercase tracking-wider text-foreground border border-primary/50 rounded-lg hover:border-primary hover:bg-primary/10 transition-all"
+            className="px-8 py-4 font-display font-semibold text-sm uppercase tracking-wider text-foreground border border-border rounded-lg hover:border-primary hover:bg-secondary transition-all"
           >
             Explore Skills
           </motion.a>
@@ -121,18 +147,18 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="mt-16 flex flex-wrap justify-center gap-3"
+          className="mt-10 flex flex-wrap justify-center gap-3"
         >
-          {['React', 'TypeScript', 'Three.js', 'Node.js', 'Tailwind'].map((tech, index) => (
+          {['React', 'Next.js', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Tailwind'].map((tech, index) => (
             <motion.span
               key={tech}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 1.3 + index * 0.1 }}
-              className="text-xs text-muted-foreground/70 font-mono"
+              className="text-xs sm:text-sm text-muted-foreground/70 font-mono"
             >
               {tech}
-              {index < 4 && <span className="mx-3 text-primary/50">•</span>}
+              {index < 6 && <span className="mx-2 sm:mx-3 text-primary/50">•</span>}
             </motion.span>
           ))}
         </motion.div>
@@ -157,10 +183,10 @@ const HeroSection = () => {
       </motion.div>
 
       {/* Corner decorations */}
-      <div className="absolute top-4 left-4 w-20 h-20 border-l-2 border-t-2 border-primary/20 pointer-events-none" />
-      <div className="absolute top-4 right-4 w-20 h-20 border-r-2 border-t-2 border-primary/20 pointer-events-none" />
-      <div className="absolute bottom-4 left-4 w-20 h-20 border-l-2 border-b-2 border-primary/20 pointer-events-none" />
-      <div className="absolute bottom-4 right-4 w-20 h-20 border-r-2 border-b-2 border-primary/20 pointer-events-none" />
+      <div className="absolute top-4 left-4 w-20 h-20 border-l-2 border-t-2 border-border pointer-events-none" />
+      <div className="absolute top-4 right-4 w-20 h-20 border-r-2 border-t-2 border-border pointer-events-none" />
+      <div className="absolute bottom-4 left-4 w-20 h-20 border-l-2 border-b-2 border-border pointer-events-none" />
+      <div className="absolute bottom-4 right-4 w-20 h-20 border-r-2 border-b-2 border-border pointer-events-none" />
     </section>
   );
 };

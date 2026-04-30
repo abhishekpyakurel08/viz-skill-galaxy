@@ -28,7 +28,7 @@ const SkillsProjection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="inline-block"
           >
-            <span className="text-xs md:text-sm font-display tracking-[0.3em] text-primary/70 uppercase">
+            <span className="text-xs md:text-sm font-display tracking-[0.3em] text-muted-foreground uppercase">
               Interactive Experience
             </span>
           </motion.div>
@@ -52,7 +52,7 @@ const SkillsProjection = () => {
           >
             Explore my technical expertise through an immersive 3D visualization.
             <br className="hidden md:block" />
-            <span className="text-primary/80">Hover or click</span> on the orbs to discover each skill.
+            <span className="text-accent">Hover or click</span> on the orbs to discover each skill.
           </motion.p>
         </div>
       </motion.div>
@@ -79,7 +79,7 @@ const SkillsProjection = () => {
                 transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
                 className="glass-panel px-3 py-1.5 md:px-4 md:py-2"
               >
-                <span className="text-xs md:text-sm font-medium text-primary/90">
+                <span className="text-xs md:text-sm font-medium text-foreground">
                   {tech}
                 </span>
               </motion.div>
@@ -98,10 +98,10 @@ const SkillsProjection = () => {
       </motion.div>
 
       {/* Corner decorations */}
-      <div className="absolute top-4 left-4 w-16 h-16 border-l-2 border-t-2 border-primary/30 pointer-events-none" />
-      <div className="absolute top-4 right-4 w-16 h-16 border-r-2 border-t-2 border-primary/30 pointer-events-none" />
-      <div className="absolute bottom-4 left-4 w-16 h-16 border-l-2 border-b-2 border-primary/30 pointer-events-none" />
-      <div className="absolute bottom-4 right-4 w-16 h-16 border-r-2 border-b-2 border-primary/30 pointer-events-none" />
+      <div className="absolute top-4 left-4 w-16 h-16 border-l-2 border-t-2 border-border pointer-events-none" />
+      <div className="absolute top-4 right-4 w-16 h-16 border-r-2 border-t-2 border-border pointer-events-none" />
+      <div className="absolute bottom-4 left-4 w-16 h-16 border-l-2 border-b-2 border-border pointer-events-none" />
+      <div className="absolute bottom-4 right-4 w-16 h-16 border-r-2 border-b-2 border-border pointer-events-none" />
     </section>
   );
 };

@@ -13,14 +13,12 @@ interface Skill {
 const skills: Skill[] = [
   { name: 'React.js', proficiency: 95, color: '#00d4ff', position: [-2.5, 1, 0] },
   { name: 'TypeScript', proficiency: 90, color: '#3178c6', position: [2.5, 0.5, 1] },
-  { name: 'Three.js', proficiency: 85, color: '#00ff88', position: [0, 2, -1] },
   { name: 'Node.js', proficiency: 88, color: '#68a063', position: [-1.5, -1, 2] },
   { name: 'Tailwind CSS', proficiency: 92, color: '#06b6d4', position: [1.5, -0.5, -2] },
-  { name: 'Python', proficiency: 80, color: '#ffd43b', position: [-3, 0, -1.5] },
   { name: 'Next.js', proficiency: 87, color: '#ffffff', position: [3, 1.5, 0.5] },
-  { name: 'GraphQL', proficiency: 78, color: '#e535ab', position: [0.5, -1.5, 1.5] },
-  { name: 'Docker', proficiency: 75, color: '#2496ed', position: [-2, 1.5, 1.5] },
-  { name: 'AWS', proficiency: 70, color: '#ff9900', position: [2, -1, -1] },
+  { name: 'MongoDB', proficiency: 85, color: '#47a248', position: [-3, -0.5, -1] },
+  { name: 'Express.js', proficiency: 86, color: '#404040', position: [0, 1.5, -1] },
+  { name: 'JavaScript', proficiency: 93, color: '#f7df1e', position: [2, -1.5, 1] },
 ];
 
 const ParticleField = () => {

@@ -1,73 +1,103 @@
-# Welcome to your Lovable project
+# Abhishek Pyakurel - Portfolio
 
-## Project info
+A modern, responsive portfolio website showcasing my skills and projects as a Full Stack Developer.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🚀 Live Demo
 
-## How can I edit this code?
+[View Portfolio](https://your-portfolio-url.vercel.app)
 
-There are several ways of editing your application.
+## ✨ Features
 
-**Use Lovable**
+- **Modern UI/UX** - Clean, minimalist design with smooth animations
+- **Fully Responsive** - Mobile-first design that works on all devices
+- **Smooth Navigation** - Sticky navbar with smooth scroll to sections
+- **Interactive Components** - Framer Motion animations throughout
+- **Dark/Light Mode** - Theme support with consistent color palette
+- **Skills Showcase** - Categorized technical skills with icons
+- **Project Gallery** - Interactive project cards with hover effects
+- **Experience Timeline** - Professional work history display
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## 🛠️ Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Framework:** React 19 + Vite
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **UI Components:** shadcn/ui
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Deployment:** Vercel
 
-**Use your preferred IDE**
+## 📂 Project Structure
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```
+src/
+├── components/
+│   ├── HeroSection.tsx      # Landing section with profile
+│   ├── SkillsShowcase.tsx   # Technical skills display
+│   ├── ExperienceSection.tsx # Work experience timeline
+│   ├── ProjectsShowcase.tsx # Project gallery
+│   ├── ProjectCard.tsx      # Individual project card
+│   ├── Navbar.tsx           # Desktop navigation
+│   ├── MobileNav.tsx        # Mobile navigation
+│   └── Footer.tsx           # Footer with contact info
+├── pages/
+│   └── Index.tsx            # Main page composition
+├── components/ui/           # shadcn/ui components
+└── index.css                # Global styles & CSS variables
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🎨 Color Palette
 
-Follow these steps:
+- **Primary:** `#6366f1` (Indigo)
+- **Secondary:** `#8b5cf6` (Violet)  
+- **Accent:** `#ec4899` (Pink)
+- **Background:** Light/Dark mode support
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🚀 Getting Started
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Prerequisites
 
-# Step 3: Install the necessary dependencies.
-npm i
+- Node.js 18+
+- npm or pnpm
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/abhishekpyakurel08/portfolio.git
+
+# Navigate to project
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The dev server will start at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📱 Sections
 
-## What technologies are used for this project?
+1. **Hero** - Introduction with profile photo and contact links
+2. **Skills** - Technical skills categorized by domain
+3. **Experience** - Professional work history
+4. **Projects** - Featured projects with descriptions
+5. **Footer** - Contact information and social links
 
-This project is built with:
+## 📧 Contact
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Email:** abhishekpyakurel01@gmail.com
+- **GitHub:** [@abhishekpyakurel08](https://github.com/abhishekpyakurel08)
+- **LinkedIn:** [Abhishek Pyakurel](https://www.linkedin.com/in/abhishek-pyakurel-b1b6523a7/)
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Built with ❤️ using React, TypeScript & Tailwind CSS

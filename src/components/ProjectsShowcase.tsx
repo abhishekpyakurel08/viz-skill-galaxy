@@ -4,7 +4,9 @@ import ProjectCard from './ProjectCard';
 interface Project {
   title: string;
   description: string;
-  image: string;
+  image?: string;
+  gif?: string;
+  dateRange?: string;
   technologies: string[];
   liveUrl?: string;
   githubUrl?: string;
@@ -12,20 +14,24 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'ATS NEPAL WEBSITE',
-    description: 'Short description of your first project. Replace this with details about your actual project.',
-    image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop',
-    technologies: ['React', 'TypeScript', 'Node.js'],
+    title: 'ATS Nepal – Vehicle & Parking System',
+    description: 'A responsive vehicle tracking and parking alert system (freelance) with an intuitive interface designed for real-time usability. Built with React + Vite for fast UI performance; focused on responsiveness and overall system usability.',
+    // image: '/images/ats-nepal.jpg', // Add project screenshot
+    // gif: '/images/ats-nepal.gif', // Add project demo GIF
+    dateRange: 'Jan 2024 - Feb 2024',
+    technologies: ['React', 'Vite', 'TailwindCSS'],
     liveUrl: 'https://github.com/thomasabhi/ATS-NEPAL',
-    githubUrl: 'https://github.com/thomasabhi',
+    githubUrl: 'https://github.com/thomasabhi/ATS-NEPAL',
   },
   {
-    title: 'E-Commerce Backend with TypeScript',
-    description: 'Short description of your second project. Replace this with details about your actual project.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-    technologies: ['Next.js', 'PostgreSQL', 'Tailwind CSS'],
-    liveUrl: 'git@github.com:thomasabhi/ecommerce_backend_with_typescript.git',
-    githubUrl: 'https://github.com/thomasabhi/ATS-NEPAL',
+    title: 'Amipal Hospital Website',
+    description: 'A complete hospital management website for Amipal Hospital using Next.js 15 + Payload CMS 3 for scalable content and backend management. Modern, responsive UI with TailwindCSS and Shadcn UI; enhanced UX with smooth animations via Framer Motion.',
+    // image: '/images/amipal.jpg', // Add project screenshot
+    // gif: '/images/amipal.gif', // Add project demo GIF
+    dateRange: 'April 2026 - Present',
+    technologies: ['Next.js 15', 'Payload CMS 3', 'TailwindCSS', 'Framer Motion'],
+    liveUrl: 'https://amipal.vercel.app/en',
+    githubUrl: 'https://github.com/thomasabhi',
   },
 ];
 
@@ -35,8 +41,8 @@ const ProjectsShowcase = () => {
       {/* Background effects */}
       <div className="absolute inset-0 bg-background">
         <div className="absolute inset-0 grid-pattern opacity-30" />
-        <div className="absolute top-1/4 right-0 w-1/3 h-1/3 bg-secondary/10 rounded-full blur-[150px]" />
-        <div className="absolute bottom-1/4 left-0 w-1/3 h-1/3 bg-accent/10 rounded-full blur-[150px]" />
+        <div className="absolute top-1/4 right-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/4 left-0 w-1/3 h-1/3 bg-accent/5 rounded-full blur-[150px]" />
       </div>
 
       <div className="relative z-10 container mx-auto px-4">
@@ -53,7 +59,7 @@ const ProjectsShowcase = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-block text-xs md:text-sm font-display tracking-[0.3em] text-primary/70 uppercase mb-4"
+            className="inline-block text-xs md:text-sm font-display tracking-[0.3em] text-muted-foreground uppercase mb-4"
           >
             Featured Work
           </motion.span>
@@ -91,7 +97,7 @@ const ProjectsShowcase = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-8 py-4 font-display font-semibold text-sm uppercase tracking-wider text-foreground border border-primary/50 rounded-lg hover:border-primary hover:bg-primary/10 transition-all"
+            className="inline-flex items-center gap-2 px-8 py-4 font-display font-semibold text-sm uppercase tracking-wider text-foreground border border-border rounded-lg hover:border-primary hover:bg-secondary transition-all"
           >
             View All Projects
             <span className="text-primary">→</span>
@@ -100,10 +106,10 @@ const ProjectsShowcase = () => {
       </div>
 
       {/* Corner decorations */}
-      <div className="absolute top-8 left-8 w-12 h-12 border-l border-t border-secondary/30 pointer-events-none" />
-      <div className="absolute top-8 right-8 w-12 h-12 border-r border-t border-secondary/30 pointer-events-none" />
-      <div className="absolute bottom-8 left-8 w-12 h-12 border-l border-b border-secondary/30 pointer-events-none" />
-      <div className="absolute bottom-8 right-8 w-12 h-12 border-r border-b border-secondary/30 pointer-events-none" />
+      <div className="absolute top-8 left-8 w-12 h-12 border-l border-t border-border pointer-events-none" />
+      <div className="absolute top-8 right-8 w-12 h-12 border-r border-t border-border pointer-events-none" />
+      <div className="absolute bottom-8 left-8 w-12 h-12 border-l border-b border-border pointer-events-none" />
+      <div className="absolute bottom-8 right-8 w-12 h-12 border-r border-b border-border pointer-events-none" />
     </section>
   );
 };

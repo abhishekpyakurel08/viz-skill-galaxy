@@ -5,14 +5,16 @@ import { ExternalLink, Github } from 'lucide-react';
 interface ProjectCardProps {
   title: string;
   description: string;
-  image: string;
+  image?: string;
+  gif?: string;
+  dateRange?: string;
   technologies: string[];
   liveUrl?: string;
   githubUrl?: string;
   index: number;
 }
 
-const ProjectCard = ({ title, description, image, technologies, liveUrl, githubUrl, index }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, image, gif, dateRange, technologies, liveUrl, githubUrl, index }: ProjectCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -22,7 +24,7 @@ const ProjectCard = ({ title, description, image, technologies, liveUrl, githubU
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="relative h-[400px] perspective-1000"
+      className="relative h-[380px] sm:h-[400px] perspective-1000"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -43,40 +45,56 @@ const ProjectCard = ({ title, description, image, technologies, liveUrl, githubU
           style={{ backfaceVisibility: 'hidden' }}
         >
           <div className="relative w-full h-full">
-            {/* Project image */}
-            <img
-              src={image}
-              alt={title}
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
+            {/* Project image / GIF - only render if image exists */}
+            {image && (
+              <>
+                <div className="relative w-full h-48 overflow-hidden">
+                  {/* Static image (default) */}
+                  <img
+                    src={image}
+                    alt={title}
+                    className={`w-full h-full object-cover transition-opacity duration-300 ${isHovered && gif ? 'opacity-0' : 'opacity-100'}`}
+                    loading="lazy"
+                  />
+                  {/* GIF on hover */}
+                  {gif && (
+                    <img
+                      src={gif}
+                      alt={`${title} preview`}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
+                      loading="lazy"
+                    />
+                  )}
+                </div>
+                {/* Gradient overlay */}
+                <div className="absolute top-48 inset-x-0 h-24 bg-gradient-to-t from-background via-background/90 to-transparent" />
+              </>
+            )}
             
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-            
-            {/* Glow effect on hover */}
+            {/* Subtle hover effect */}
             <motion.div
-              className="absolute inset-0 pointer-events-none"
+              className="absolute inset-0 pointer-events-none bg-primary/5"
               animate={{ opacity: isHovered ? 1 : 0 }}
               transition={{ duration: 0.3 }}
-              style={{
-                boxShadow: 'inset 0 0 60px hsl(var(--primary) / 0.2)',
-              }}
             />
 
             {/* Content */}
-            <div className="absolute bottom-0 left-0 right-0 p-6">
-              <h3 className="text-xl md:text-2xl font-display font-bold text-foreground mb-2">
+            <div className={`${image ? 'absolute bottom-0 left-0 right-0' : 'relative h-full flex flex-col justify-center'} p-6`}>
+              {/* Date range */}
+              {dateRange && (
+                <p className="text-xs text-muted-foreground/70 mb-2">{dateRange}</p>
+              )}
+              <h3 className="text-lg sm:text-xl md:text-2xl font-display font-bold text-foreground mb-2 line-clamp-2">
                 {title}
               </h3>
-              <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
+              <p className="text-xs sm:text-sm text-muted-foreground line-clamp-3 sm:line-clamp-2 mb-4">
                 {description}
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-4">
                 {technologies.slice(0, 3).map((tech) => (
                   <span
                     key={tech}
-                    className="text-xs px-2 py-1 rounded-full bg-primary/20 text-primary border border-primary/30"
+                    className="text-xs px-2 py-1 rounded-full bg-secondary text-secondary-foreground border border-border"
                   >
                     {tech}
                   </span>
@@ -87,10 +105,42 @@ const ProjectCard = ({ title, description, image, technologies, liveUrl, githubU
                   </span>
                 )}
               </div>
+              {/* Action buttons */}
+              <div className="flex flex-wrap gap-2">
+                {githubUrl && (
+                  <motion.a
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={(e) => e.stopPropagation()}
+                    className="flex items-center justify-center gap-2 px-3 py-2 sm:py-1.5 rounded-md bg-secondary text-secondary-foreground border border-border text-xs font-medium hover:bg-muted transition-colors min-h-[44px]"
+                  >
+                    <Github className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
+                    <span className="hidden sm:inline">Source</span>
+                    <span className="sm:hidden">GitHub</span>
+                  </motion.a>
+                )}
+                {liveUrl && (
+                  <motion.a
+                    href={liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={(e) => e.stopPropagation()}
+                    className="flex items-center justify-center gap-2 px-3 py-2 sm:py-1.5 rounded-md bg-primary text-primary-foreground text-xs font-medium hover:bg-primary/90 transition-colors min-h-[44px]"
+                  >
+                    <ExternalLink className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
+                    Live
+                  </motion.a>
+                )}
+              </div>
             </div>
 
-            {/* Flip hint */}
-            <div className="absolute top-4 right-4 text-xs text-muted-foreground/60 flex items-center gap-1">
+            {/* Flip hint - hidden on mobile */}
+            <div className="hidden sm:flex absolute top-4 right-4 text-xs text-muted-foreground/60 items-center gap-1">
               <span>Click to flip</span>
               <motion.span
                 animate={{ rotateY: [0, 180, 0] }}
@@ -101,8 +151,8 @@ const ProjectCard = ({ title, description, image, technologies, liveUrl, githubU
             </div>
           </div>
 
-          {/* Border glow */}
-          <div className="absolute inset-0 rounded-2xl border border-primary/20 pointer-events-none" />
+          {/* Border */}
+          <div className="absolute inset-0 rounded-2xl border border-border pointer-events-none" />
         </div>
 
         {/* Back of card */}
@@ -111,7 +161,7 @@ const ProjectCard = ({ title, description, image, technologies, liveUrl, githubU
           style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
         >
           <div>
-            <h3 className="text-xl font-display font-bold text-foreground mb-4 neon-text">
+            <h3 className="text-xl font-display font-bold text-foreground mb-4 text-glow">
               {title}
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">
