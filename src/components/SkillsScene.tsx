@@ -16,9 +16,7 @@ const skills: Skill[] = [
   { name: 'Node.js', proficiency: 88, color: '#68a063', position: [-1.5, -1, 2] },
   { name: 'Tailwind CSS', proficiency: 92, color: '#06b6d4', position: [1.5, -0.5, -2] },
   { name: 'Next.js', proficiency: 87, color: '#ffffff', position: [3, 1.5, 0.5] },
-  { name: 'MongoDB', proficiency: 85, color: '#47a248', position: [-3, -0.5, -1] },
-  { name: 'Express.js', proficiency: 86, color: '#404040', position: [0, 1.5, -1] },
-  { name: 'JavaScript', proficiency: 93, color: '#f7df1e', position: [2, -1.5, 1] },
+ 
 ];
 
 const ParticleField = () => {

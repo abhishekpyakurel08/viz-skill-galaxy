@@ -35,7 +35,7 @@ const HeroSection = () => {
           <div className="relative inline-block">
             {/* Glow effect behind image */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-accent to-secondary blur-xl opacity-40" />
-            <div className="relative w-[200px] h-[200px] sm:w-[220px] sm:h-[220px] md:w-[250px] md:h-[250px] rounded-full border-4 border-border overflow-hidden bg-muted">
+            <div className="relative w-[150px] h-[150px] sm:w-[180px] sm:h-[180px] md:w-[200px] md:h-[200px] rounded-full border-4 border-border overflow-hidden bg-muted">
               <img
                 src="/profile.png"
                 alt="Abhishek Pyakurel"
