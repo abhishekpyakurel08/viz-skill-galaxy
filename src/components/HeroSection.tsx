@@ -86,8 +86,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-4 md:mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed px-4"
         >
-          Computer Science undergraduate eager to bridge the gap between theory and real-world software development.
-        </motion.p>
+a passionate Full-Stack Developer specializing in the MERN stack (MongoDB, Express, React, Node.js) with a strong focus on building        </motion.p>
 
         {/* Contact Info */}
         <motion.div
