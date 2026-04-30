@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Sun, Moon } from 'lucide-react';
+import { useTheme } from './ThemeProvider';
 
 const navItems = [
   { label: 'Home', href: '#hero' },
@@ -10,6 +12,7 @@ const navItems = [
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,16 +68,29 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <motion.a
-            href="#projects"
-            onClick={(e) => handleNavClick(e, '#projects')}
-            className="hidden lg:flex items-center px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors cursor-pointer"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            View Work
-          </motion.a>
+          <div className="hidden lg:flex items-center gap-2">
+            {/* Theme Toggle */}
+            <motion.button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Toggle theme"
+            >
+              {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+            </motion.button>
+
+            {/* CTA Button */}
+            <motion.a
+              href="#projects"
+              onClick={(e) => handleNavClick(e, '#projects')}
+              className="flex items-center px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors cursor-pointer"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              View Work
+            </motion.a>
+          </div>
         </div>
       </div>
     </motion.nav>

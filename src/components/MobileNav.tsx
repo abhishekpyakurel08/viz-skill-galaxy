@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Home, User, Briefcase, FolderGit2, Wrench } from 'lucide-react';
+import { Menu, X, Home, User, Briefcase, FolderGit2, Wrench, Sun, Moon } from 'lucide-react';
+import { useTheme } from './ThemeProvider';
 
 const navItems = [
   { label: 'Home', href: '#hero', icon: Home },
@@ -12,6 +13,7 @@ const navItems = [
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,14 +52,25 @@ const MobileNav = () => {
           <span className="text-lg font-display font-bold text-gradient-neon">
             AP
           </span>
-          <motion.button
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setIsOpen(!isOpen)}
-            className="p-2 rounded-lg bg-secondary text-foreground hover:bg-muted transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center border border-border"
-            aria-label={isOpen ? 'Close menu' : 'Open menu'}
-          >
-            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </motion.button>
+          <div className="flex items-center gap-2">
+            {/* Theme Toggle */}
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              onClick={toggleTheme}
+              className="p-2 rounded-lg text-foreground hover:bg-secondary transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+              aria-label="Toggle theme"
+            >
+              {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+            </motion.button>
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-lg bg-secondary text-foreground hover:bg-muted transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center border border-border"
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            >
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </motion.button>
+          </div>
         </div>
       </header>
 
