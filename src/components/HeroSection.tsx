@@ -35,7 +35,7 @@ const HeroSection = () => {
           <div className="relative inline-block">
             {/* Glow effect behind image */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-accent to-secondary blur-xl opacity-40" />
-            <div className="relative w-[150px] h-[150px] sm:w-[180px] sm:h-[180px] md:w-[200px] md:h-[200px] rounded-full border-4 border-border overflow-hidden bg-muted">
+            <div className="relative w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] md:w-[160px] md:h-[160px] rounded-full border-4 border-border overflow-hidden bg-muted">
               <img
                 src="/profile.png"
                 alt="Abhishek Pyakurel"
@@ -57,7 +57,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
           className="mb-6"
         >
-          <span className="inline-block text-[10px] sm:text-xs md:text-sm font-display tracking-[0.2em] sm:tracking-[0.4em] text-primary uppercase px-3 sm:px-4 py-2 border border-border rounded-full bg-secondary/50">
+          <span className="inline-block text-[9px] sm:text-[10px] md:text-xs font-display tracking-[0.15em] sm:tracking-[0.2em] text-primary uppercase px-2 sm:px-3 py-1.5 sm:py-2 border border-border rounded-full bg-secondary/50">
             MERN Stack Developer | Fellowship Applicant
           </span>
         </motion.div>
@@ -66,7 +66,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight"
+          className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight"
         >
           <span className="text-foreground">Hi, I'm</span>
           <br />
@@ -84,7 +84,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-6 md:mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+          className="mt-4 md:mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed px-4"
         >
           Computer Science undergraduate eager to bridge the gap between theory and real-world software development.
         </motion.p>
@@ -127,7 +127,7 @@ const HeroSection = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={scrollToProjects}
-            className="group relative px-8 py-4 font-display font-semibold text-sm uppercase tracking-wider overflow-hidden rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+            className="group relative px-6 py-3 font-display font-semibold text-xs uppercase tracking-wider overflow-hidden rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
           >
             View My Work
           </motion.button>
@@ -136,7 +136,7 @@ const HeroSection = () => {
             href="#skills"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 font-display font-semibold text-sm uppercase tracking-wider text-foreground border border-border rounded-lg hover:border-primary hover:bg-secondary transition-all"
+            className="px-6 py-3 font-display font-semibold text-xs uppercase tracking-wider text-foreground border border-border rounded-lg hover:border-primary hover:bg-secondary transition-all"
           >
             Explore Skills
           </motion.a>
@@ -147,7 +147,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="mt-10 flex flex-wrap justify-center gap-3"
+          className="mt-8 flex flex-wrap justify-center gap-2"
         >
           {['React', 'Next.js', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Tailwind'].map((tech, index) => (
             <motion.span
@@ -155,7 +155,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 1.3 + index * 0.1 }}
-              className="text-xs sm:text-sm text-muted-foreground/70 font-mono"
+              className="text-[10px] sm:text-xs text-muted-foreground/70 font-mono"
             >
               {tech}
               {index < 6 && <span className="mx-2 sm:mx-3 text-primary/50">•</span>}
